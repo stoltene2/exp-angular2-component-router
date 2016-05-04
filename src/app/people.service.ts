@@ -7,6 +7,6 @@ export class PeopleService {
   constructor() {}
 
   getPeople(): IPerson[] {
-    return [];
+    return [ {name: 'First Person'}, {name: 'Second Person'}];
   }
 }

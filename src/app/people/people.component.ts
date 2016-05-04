@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeopleService } from '../people.service';
+import { IPerson } from '../interfaces';
+
 
 @Component({
   moduleId: module.id,
@@ -10,10 +12,12 @@ import { PeopleService } from '../people.service';
 })
 export class PeopleComponent implements OnInit {
 
-  constructor(private people: PeopleService) {}
+  public people: IPerson[] = [];
+
+  constructor(private peopleService: PeopleService) {}
 
   ngOnInit() {
-    console.log(this.people.getPeople());
+    this.people = this.peopleService.getPeople();
   }
 
 }
