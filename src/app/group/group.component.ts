@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+
 import { GroupService } from '../services/group.service';
 import { IGroup } from '../interfaces';
 
@@ -7,7 +10,8 @@ import { IGroup } from '../interfaces';
   selector: 'group',
   templateUrl: 'group.component.html',
   styleUrls: ['group.component.css'],
-  providers: [GroupService]
+  providers: [GroupService],
+  directives: [ MD_LIST_DIRECTIVES ]
 })
 
 export class GroupComponent implements OnInit {

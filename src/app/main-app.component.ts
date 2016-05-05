@@ -18,5 +18,5 @@ import { GroupComponent } from './group';
   ]
 })
 export class MainAppComponent {
-  title = 'ng2-demo-app works!';
+  title = 'Look, no hands';
 }

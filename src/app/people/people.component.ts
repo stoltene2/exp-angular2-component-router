@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+
 import { PeopleService } from '../people.service';
 import { IPerson } from '../interfaces';
 
@@ -8,7 +10,8 @@ import { IPerson } from '../interfaces';
   selector: 'people',
   templateUrl: 'people.component.html',
   styleUrls: ['people.component.css'],
-  providers: [PeopleService]
+  providers: [PeopleService],
+  directives: [MD_LIST_DIRECTIVES]
 })
 export class PeopleComponent implements OnInit {
 

@@ -10,7 +10,8 @@ const map: any = {
 /** User packages configuration. */
 const materialPackages: string[] = [
   'core',
-  'toolbar'
+  'toolbar',
+  'list'
 ];
 
 const packages:any = createCustomConfig(materialPackages);

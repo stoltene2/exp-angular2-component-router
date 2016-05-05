@@ -1,3 +1,8 @@
-<ul>
-  <li *ngFor="let person of people">{{person.name}}</li>
-</ul>
+<md-list>
+  <md-list-item *ngFor="let person of people">
+    <h3 md-line>{{person.name}}</h3>
+    <p md-line>
+      <span> More info </span>
+    </p>
+  </md-list-item>
+</md-list>
