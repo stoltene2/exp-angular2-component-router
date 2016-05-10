@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OnActivate } from '@angular/router';
 
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 
@@ -7,20 +8,22 @@ import { IGroup } from '../interfaces';
 
 @Component({
   moduleId: module.id,
-  selector: 'group',
   templateUrl: 'group.component.html',
   styleUrls: ['group.component.css'],
   providers: [GroupService],
   directives: [ MD_LIST_DIRECTIVES ]
 })
 
-export class GroupComponent implements OnInit {
+export class GroupComponent implements OnInit, OnActivate {
 
-  public groups: IGroup[] = [];
+  groups: IGroup[];
 
   constructor(private groupService: GroupService) {}
 
+  routerOnActivate() {
+    this.groupService.getGroups().subscribe(groups => this.groups = groups);
+  }
+
   ngOnInit() {
-    this.groupService.getGroups().subscribe((groups) => this.groups = groups);
   }
 }
